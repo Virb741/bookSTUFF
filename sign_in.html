@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body id="full_body">
+<header>
+<h1 id="home">Книжный STAFF</h1>
+
+<nav id="nav_block">
+    <div class="burger" id="burger">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+    </div>
+    <ul class="nav-menu" id="nav-menu">
+            <a href="index.html">Главная</a>
+            <a href="sign_in.html">Регистрация</a>
+            <a href="gallery.html">Дополнительно</a>
+            <a href="tel: +79610000000">Контакты</a>
+    </ul>
+</nav>
+
+<form class="search-form" role="search" action="/search" method="GET"> 
+    <input
+        type="text"
+        name="q"
+        class="class-input"
+        placeholder="Введите запрос: "
+        aria-label="Введите поисковой запрос:"
+    >
+    
+    <button type="submit" class="search-button" aria-label="Найти">
+        🔍
+    </button>
+</form>
+</header>
+<main class="background-sign-in">
+<section id="form_reg">
+<label type="text" name="head_sign_in" id="head_sign_in">Авторизация</label>
+<form class="form" action="/upload" method="post" enctype="multipart/form-data">
+    <div>
+        <label class = "labe">Логин:</label>
+        <input type="text" name="name" id="name" class="input_pole" required>
+    </div>
+    <div>
+        <label for="password" class = "labe">Пароль:</label>
+        <input type="password" name="password" id="password" class="input_pole" required>
+    </div>
+    <div>
+        <label for="email" class = "labe">Почта:</label>
+        <input type="email" name="email" id="email" class="input_pole" required>
+    </div>
+    <div>
+        <label for="tel" class = "labe">Телефон:</label>
+        <input type="tel" name="tel" id="tel" class="input_pole" required>
+    </div>
+    <div>
+        <label for="number" class = "labe">Возраст:</label>
+        <input type="number" name="number" id="number" class="input_pole" required>
+    </div>
+    <div>
+        <label for="meeting-time" class="labe">Выберите время и дату:</label>
+        <input type="datetime-local" id="meeting-time" name="meeting-time" required>
+    </div>
+    <div>
+        <label for="city-select" class = "labe">Город:</label>
+        <select name="city-select" id="city-select" required>
+            <option value="">-- Выберете город --</option>
+            <option value="moscow">Москва</option>
+            <option value="pyatigorsk">Пятигорск</option>
+            <option value="kazan">Казань</option>   
+            <option value="kansk">Канск</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="labe">Пол:</label>
+        <label><input type="radio" name="ratioo" id="check" value="male" required>Мужчина</label>
+        <label><input type="radio" name="ratioo" id="check" value="female" required>Женщина</label>
+    </div>
+    <div>
+        <label class="labe">Фото:</label>
+        <input type="file" name="myFile" required>
+    </div>
+    <div>
+        <label for="username" class="labe">Расскажите о себе:<br></label>
+        <textarea id="textarea" name="textarea" placeholder="Введите текст..." required></textarea>
+    </div>
+    <div>
+        <input type="checkbox" name="check" id="check"  required>
+        <label for="check" class="labe">Я согласен(на) на обработку персональных данных</label>
+    </div>
+    <div><button type="submit" class="but_done">Готово</button> </div>
+</form>
+</section>
+
+<section id="media-import">
+    <div class="media-file" >
+        <iframe src="gallery.html" class="media-frame" id="media-gal" ></iframe>
+    </div>
+    <div class="media-file">
+        <video class="media-frame" controls>
+            <source src="naruto.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+</main>
+
+<footer class="footer-without-margin">
+<div class="footer-content">
+    <div class="footer-column">
+    <h3>Книжный STAFF</h3>
+    <p>На этом сайте вы не найдете свои любимые книги и не сможете прочитать их, так как разрабу лень, но скоро обязательно будет)</p>
+    <div class="social-links">
+        <a href="#"><i class="fab fa-vk"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    </div>
+    <div class="footer-column">
+    <h3>Навигация</h3>
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог книг</a></li>
+        <li><a href="category.html">Все книги</a></li>
+        <li><a href="https://ilibrary.ru/">Новинки</a></li>
+    </ul>
+    </div>
+    <div class="footer-column">
+    <h3>Контакты</h3>
+    <ul>
+        <li><i class="fas fa-envelope"></i> thenextitle@favore.ru</li>
+        <li><i class="fas fa-phone"></i> +7 (XXX) XXX-XX-XX</li>
+        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Примерения, 66</li>
+    </ul>
+    </div>
+</div>
+<div class="copyright">
+    &copy; 2025 Книжный STAFF. Все права защищены.
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
