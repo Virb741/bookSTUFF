@@ -17,7 +17,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
+  const Ticon = document.getElementById("TIcon");
+  const Tmenu = document.getElementById("TMenu");
 
+  Ticon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    Ticon.classList.toggle('active');
+    Tmenu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!Tmenu.contains(e.target) && e.target !== Ticon) {
+      Ticon.classList.remove('active');
+      Tmenu.classList.remove('active');
+    }
+  });
+
+  const body = document.body;
+  const style1 = document.getElementById("delovoyS");
+  const style2 = document.getElementById("defaultS");
+  const style3 = document.getElementById("comicsS");
+
+  function setFont(fontValue) {
+  body.style.fontFamily = fontValue;
+  localStorage.setItem('selectedFont', fontValue); // Сохраняем в браузере
+  }
+
+  // Обработчики кликов
+  style1.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setFont('"Bookman", serif');
+  });
+
+  style2.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setFont('Arial, Helvetica, sans-serif');
+  });
+
+  style3.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setFont('"Comic Sans MS", "Comic Sans", cursive');
+  });
+
+  const savedFont = localStorage.getItem('selectedFont');
+  if (savedFont) {
+    document.body.style.fontFamily = savedFont;
+  }
+  
   // Карусель с кнопочками
 // === Карусель 1: Книги ===
 {
