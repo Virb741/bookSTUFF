@@ -157,6 +157,10 @@ header {
     background: #d6b19a;
 }
 
+a {
+    text-decoration: none;
+}
+
 #home {
     align-self: center;
     justify-self: center;
@@ -260,8 +264,6 @@ header {
     will-change: transform;
     animation: scrolling 30s linear infinite;
 }
-
-
 
 @keyframes scrolling {
     0% {
@@ -837,7 +839,7 @@ header {
     width: 40%;
     justify-self: center;
     justify-content: center;
-    margin: 10px;
+    margin: 10px 10px 100px 10px;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);

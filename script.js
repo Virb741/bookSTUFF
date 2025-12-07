@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('burger');
   const navMenu = document.getElementById('nav-menu');
-
+  const Ticon = document.getElementById("TIcon");
+  const Tmenu = document.getElementById("TMenu");
   // Переключаем класс .active
   burger.addEventListener('click', (e) => {
     e.stopPropagation();
     burger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    Ticon.classList.remove('active');
+    Tmenu.classList.remove('active');
   });
 
   // Закрываем при клике вне меню
@@ -17,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  const Ticon = document.getElementById("TIcon");
-  const Tmenu = document.getElementById("TMenu");
 
   Ticon.addEventListener('click', (e) => {
     e.stopPropagation();
     Ticon.classList.toggle('active');
     Tmenu.classList.toggle('active');
+    burger.classList.remove('active');
+    navMenu.classList.remove('active');
   });
 
   document.addEventListener('click', (e) => {
@@ -109,16 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
   }
 
-  // Инициализация
   updateCardWidth();
   updateVisibleCards();
   updateCarousel();
 
-  // Обработчики
   prevBtn.addEventListener('click', prevSlide);
   nextBtn.addEventListener('click', nextSlide);
 
-  // Адаптивность
   window.addEventListener('resize', () => {
     updateCardWidth();
     updateVisibleCards();
@@ -173,16 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
   }
 
-  // Инициализация
   updateCardWidth();
   updateVisibleCards();
   updateCarousel();
 
-  // Обработчики
   prevBtn.addEventListener('click', prevSlide);
   nextBtn.addEventListener('click', nextSlide);
 
-  // Адаптивность
   window.addEventListener('resize', () => {
     updateCardWidth();
     updateVisibleCards();
