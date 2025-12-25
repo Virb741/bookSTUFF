@@ -986,9 +986,7 @@ footer {
     margin: 0 auto;
 }
 
-@media (max-width: 768px){
-    .footer-content{grid-template-columns: repeat();}
-}
+
 
 .footer-column h3 {
     font-size: 1.3rem;
@@ -1060,8 +1058,8 @@ footer {
     background: linear-gradient(135deg, #0088cc, #2a9df4);
 }
 
-.icon-instagram{
-    background: linear-gradient(-135deg, #833ab4, #fd1d3f, #fcaf45);
+.icon-youtube{
+    background: linear-gradient(-135deg, #b43a67, #ff0000, #fc6745);
 }
 
 .copyright {
