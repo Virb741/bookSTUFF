@@ -36,36 +36,86 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const body = document.body;
-  const style1 = document.getElementById("delovoyS");
-  const style2 = document.getElementById("defaultS");
-  const style3 = document.getElementById("comicsS");
+ // стили и квадраты вместо комикса
 
-  function setFont(fontValue) {
-  body.style.fontFamily = fontValue;
-  localStorage.setItem('selectedFont', fontValue); // Сохраняем в браузере
-  }
+const body = document.body;
+const style1 = document.getElementById("delovoyS");
+const style2 = document.getElementById("defaultS");
+const style3 = document.getElementById("comicsS");
 
-  // Обработчики кликов
-  style1.addEventListener('click', (e) => {
+function setFont(fontValue, isSquareMode = false) {
+    // 1. Меняем шрифт
+    body.style.fontFamily = fontValue;
+    localStorage.setItem('selectedFont', fontValue); // Сохраняем шрифт
+
+    // 2. Включаем или выключаем класс квадратов
+    if (isSquareMode) {
+        body.classList.add('square-mode');
+        localStorage.setItem('isSquareMode', 'true');
+    } else {
+        body.classList.remove('square-mode');
+        localStorage.setItem('isSquareMode', 'false');
+    }
+}
+
+// Обработчики кликов
+style1.addEventListener('click', (e) => {
     e.stopPropagation();
-    setFont('"Bookman", serif');
-  });
+    setFont('"Bookman", serif', false); // Выключаем квадраты
+});
 
-  style2.addEventListener('click', (e) => {
+style2.addEventListener('click', (e) => {
     e.stopPropagation();
-    setFont('Arial, Helvetica, sans-serif');
-  });
+    setFont('Arial, Helvetica, sans-serif', false); // Выключаем квадраты
+});
 
-  style3.addEventListener('click', (e) => {
+style3.addEventListener('click', (e) => {
     e.stopPropagation();
-    setFont('"Comic Sans MS", "Comic Sans", cursive');
-  });
+    setFont('"Comic Sans MS", "Comic Sans", cursive', true); // ВКЛЮЧАЕМ квадраты
+});
 
-  const savedFont = localStorage.getItem('selectedFont');
-  if (savedFont) {
-    document.body.style.fontFamily = savedFont;
-  }
+// Восстановление настроек при загрузке страницы
+const savedFont = localStorage.getItem('selectedFont');
+const savedSquareMode = localStorage.getItem('isSquareMode');
+
+if (savedFont) {
+    body.style.fontFamily = savedFont;
+}
+
+if (savedSquareMode === 'true') {
+    body.classList.add('square-mode');
+}
+
+  // const body = document.body;
+  // const style1 = document.getElementById("delovoyS");
+  // const style2 = document.getElementById("defaultS");
+  // const style3 = document.getElementById("comicsS");
+
+  // function setFont(fontValue) {
+  // body.style.fontFamily = fontValue;
+  // localStorage.setItem('selectedFont', fontValue); // Сохраняем в браузере
+  // }
+
+  // // Обработчики кликов
+  // style1.addEventListener('click', (e) => {
+  //   e.stopPropagation();
+  //   setFont('"Bookman", serif');
+  // });
+
+  // style2.addEventListener('click', (e) => {
+  //   e.stopPropagation();
+  //   setFont('Arial, Helvetica, sans-serif');
+  // });
+
+  // style3.addEventListener('click', (e) => {
+  //   e.stopPropagation();
+  //   setFont('"Comic Sans MS", "Comic Sans", cursive');
+  // });
+
+  // const savedFont = localStorage.getItem('selectedFont');
+  // if (savedFont) {
+  //   document.body.style.fontFamily = savedFont;
+  // }
   
   // Карусель с кнопочками
 // === Карусель 1: Книги ===
@@ -133,8 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
 {
   const grid = document.getElementById('authorsGrid');
   const cards = Array.from(grid.querySelectorAll('.author-card'));
-  const prevBtn = document.getElementById('prev-authors');
-  const nextBtn = document.getElementById('next-authors');
+  const prevBtn = document.getElementById('next-authors');
+  const nextBtn = document.getElementById('prev-authors');
 
   let currentIndex = 0;
   let cardWidth = 0;

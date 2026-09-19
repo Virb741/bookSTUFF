@@ -6,6 +6,11 @@ body {
     background-color: #f8e9d2; 
 }
 
+body.square-mode * {
+    color: transparent !important;
+    text-shadow: 0 0 10px #000;
+}
+
 /* Шапка */
 header {
     position: fixed;
@@ -253,7 +258,7 @@ a {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     position: relative;
     &:hover .group {
-      animation-play-state: paused;
+      animation-play-state: running;
     }
 }
 
@@ -837,6 +842,7 @@ a {
 #form_reg {
     background-color: #fffaf5;
     width: 40%;
+    min-height: 150px;
     justify-self: center;
     justify-content: center;
     margin: 10px 10px 100px 10px;

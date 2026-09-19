@@ -19,7 +19,7 @@
     <ul class="nav-menu" id="nav-menu">
             <a href="index.html">Главная</a>
             <a href="sign_in.html">Регистрация</a>
-            <a href="gallery.html">Дополнительно</a>
+            <a href="catalog.html">Каталог книг</a>
             <a href="tel: +79610000000">Контакты</a>
     </ul>
 </nav>
@@ -64,7 +64,7 @@
 <form class="form" action="/upload" method="post" enctype="multipart/form-data">
     <div>
         <label class = "labe">Логин:</label>
-        <input type="text" name="name" id="name" class="input_pole" required>
+        <input type="text" name="name" id="name" class="input_pole">
     </div>
     <div>
         <label for="password" class = "labe">Пароль:</label>
@@ -76,15 +76,11 @@
     </div>
     <div>
         <label for="tel" class = "labe">Телефон:</label>
-        <input type="number" name="tel" id="tel" class="input_pole" required>
+        <input type="number" name="tel" id="tel" class="input_pole" min="10000000000" max="99999999999" step="1" required>
     </div>
     <div>
         <label for="number" class = "labe">Возраст:</label>
-        <input type="number" name="number" id="number" class="input_pole" required>
-    </div>
-    <div>
-        <label for="meeting-time" class="labe">Выберите время и дату:</label>
-        <input type="datetime-local" id="meeting-time" name="meeting-time" required>
+        <input type="number" name="number" id="number" class="input_pole" min="-100000" max="150" step="1" required>
     </div>
     <div>
         <label for="city-select" class = "labe">Город:</label>
@@ -113,7 +109,7 @@
         <input type="checkbox" name="check" id="check"  required>
         <label for="check" class="labe">Я согласен(на) на обработку персональных данных</label>
     </div>
-    <div><button type="submit" class="but_done">Готово</button> </div>
+    <div><a href='done.html' class="but_done" >Готово</a> </div>
 </form>
 </section>
 
@@ -133,11 +129,11 @@
 <div class="footer-content">
     <div class="footer-column">
     <h3>Книжный STAFF</h3>
-    <p>На этом сайте вы не найдете свои любимые книги и не сможете прочитать их, но скоро обязательно будут)</p>
+    <p>На этом сайте вы не найдете свои любимые книги и не сможете прочитать их) может однажды...</p>
     <div class="social-links">
-        <a class ="icon-vk" href="#"><i class="fab fa-vk"></i></a>
-        <a class ="icon-telegram" href="#"><i class="fab fa-telegram"></i></a>
-        <a class ="icon-youtube" href="#"><i class="fab fa-youtube"></i></a>
+        <a class ="icon-vk" href="https://vk.ru/feed"><i class="fab fa-vk"></i></a>
+        <a class ="icon-telegram" href="https://t.me/thenextitle"><i class="fab fa-telegram"></i></a>
+        <a class ="icon-youtube" href="https://www.youtube.com/@Thenextitle"><i class="fab fa-youtube"></i></a>
     </div>
     </div>
     <div class="footer-column">
@@ -146,7 +142,6 @@
         <li><a href="index.html">Главная</a></li>
         <li><a href="catalog.html">Каталог книг</a></li>
         <li><a href="category.html">Все книги</a></li>
-        <li><a href="https://ilibrary.ru/">Новинки</a></li>
     </ul>
     </div>
     <div class="footer-column">
